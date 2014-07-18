@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails sfr-social-netword: development" uuid="d7010dd4-3c7b-49e8-bd09-2b715effab2c">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails sfr-social-netword: test" uuid="dfe03515-2e68-4487-ab11-b9363a7f5be4">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails sfr-social-netword: production" uuid="062a9351-c6ad-4682-a890-f1eafb3dbf45">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
