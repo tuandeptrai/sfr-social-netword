@@ -1,0 +1,10 @@
+- if flash
+  .row
+    - if notice
+      .alert.alert-success.fade.in
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
+        = notice
+    - if alert
+      .alert.alert-danger.fade.in
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
+        = alert
