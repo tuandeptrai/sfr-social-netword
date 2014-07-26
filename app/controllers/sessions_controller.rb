@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user.persisted? && @user.valid_password?(params[:user][:password])
       if @user.confirmed?
         sign_in User, @user
-        redirect_to new_session_path
+        redirect_to index_path
         flash[:notice] = I18n.t('devise.sessions.signed_in')
       else
         redirect_to new_session_path
