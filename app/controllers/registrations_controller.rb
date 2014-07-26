@@ -15,9 +15,11 @@ class RegistrationsController < ApplicationController
     if @user.valid_password?(params[:user][:password])
       @user.skip_confirmation!
       @user.save
-      render :new, flash[:notice] = I18n.t('devise.registrations.signed_up')
+      redirect_to index_path
+      flash[:notice] = I18n.t('devise.registrations.signed_up')
     else
-      render :new, flash[:alert] = 'Signed error!'
+      render :new
+      flash[:alert] = 'Signed error!'
     end
   end
 

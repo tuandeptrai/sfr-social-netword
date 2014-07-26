@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
     if @article.title != nil && @article.content != nil
       @article.save
       redirect_to index_path
-      flash[:notice] = 'Create article successfully!'
+      flash[:notice] = 'Create successfully!'
     else
       redirect_to index_path
       flash[:notice] = 'Content valid!'
@@ -23,6 +23,22 @@ class ArticlesController < ApplicationController
   def update
   end
   def delete
+  end
+
+  def post_comment
+    @cm = Comment.new
+    @cm.article_id = params[:article_id]
+    @cm.user_id = current_user.id
+    @cm.content = params[:content_art]
+
+    if @cm.content != nil
+      @cm.save
+      redirect_to index_path
+      flash[:notice] = 'Create successfully!'
+    else
+      redirect_to index_path
+      flash[:notice] = 'Content valid!'
+    end
   end
 
   private

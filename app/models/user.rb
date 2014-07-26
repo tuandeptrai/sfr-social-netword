@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :articles
+  has_many :comments
 
   class << self
     def build_with_user(params = {})

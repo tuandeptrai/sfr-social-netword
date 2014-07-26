@@ -10,11 +10,15 @@ Rails.application.routes.draw do
   get '/sign-out', to: 'sessions#destroy', as: :destroy_session
 
   get '/index', to: 'home#index', as: :index
+  get '/wall', to: 'home#all_article', as: :all_article
   devise_for :users
 
 
   resources :articles do
+    post :post_comment
+
   end
+
   namespace :users do
     resources :articles do
     end
