@@ -17,7 +17,7 @@
             %p.form-control-static
             - art.comments.each do |cm|
               %label user
-              = art.user_id
+              = cm.user_id
               %label content comment
               = cm.content
             %form{action: article_post_comment_path(art), method: :post, remote: true}

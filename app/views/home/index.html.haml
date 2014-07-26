@@ -1,32 +1,10 @@
 .row
   .col-lg-12
-    %h1.page-header Dashboard
+    %h1.page-header Post Article
 .row
   .col-lg-8
     .col-lg-6
       = render 'shared/notification'
-      - if @user
-        - @user.articles.each do |art|
-          .form-group
-            %label Title
-            %p.form-control-static
-              = art.title
-            %label Content article
-            %p.form-control-static
-              = art.content
-            %p.form-control-static
-            - art.comments.each do |cm|
-              %label user
-              = art.user_id
-              %label content comment
-              = cm.content
-            %form{action: article_post_comment_path(art), method: :post, remote: true}
-              = hidden_field_tag :authenticity_token,form_authenticity_token
-              .form-group
-                %label comment
-                %input.form-control{placeholder: "Comment", name: "content_art"}
-              %button.btn.btn-success{type: "submit"} send
-
       %form{action: articles_path, method: :post, remote: true}
         = hidden_field_tag :authenticity_token,form_authenticity_token
         .form-group

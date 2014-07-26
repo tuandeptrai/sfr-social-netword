@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
     @article.created_at = Time.now
     if @article.title != nil && @article.content != nil
       @article.save
-      redirect_to index_path
+      redirect_to all_article_path
       flash[:notice] = 'Create successfully!'
     else
       redirect_to index_path
